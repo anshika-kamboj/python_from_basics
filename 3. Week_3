@@ -1,0 +1,318 @@
+import random
+
+
+def conditionals_in_python():
+  print(" Simple if else statement : ")
+  friend = "Bob"
+  print(f"friend name : {friend}")
+  name = input("Enter your name : ")
+  if name == friend:
+    print("Hello ,friend !!")
+  else:
+    print("Hello , stranger -your name didnt match my friends name!!")
+
+  print(
+      "\nDirectly using values in place of conditions as in if-else they act as bool(value) :"
+  )
+  name = input("Enter your name(optional): ")
+  if name:
+    print(f"Your name is : {name}")
+  else:
+    print("You didn't enter your name")
+
+  print("\n If-else in lists using 'in' keyword : ")
+  friends = ["Anny", "Arry", "Perks", "Vicious"]
+  family = ["Mamy", "Drude", "Bary"]
+  print(f"Friends : {friends}")
+  print(f"Family : {family}")
+  name = input("Enter your name (case sensitive): ")
+  if name in friends:
+    print("Hello friend !!")
+  elif name in family:
+    print("Hello family!!")
+  else:
+    print("Hello stranger!!")
+
+
+def while_loops_in_python():
+  learning = True
+  while learning:
+    out = input("Type yes if you are still learning ? :")
+    learning = out == "yes"
+
+
+def For_loops_in_python():
+  friends = ["Anny", "Arry", "Perks", "Vicious"]
+  print(f"List : {friends}\n")
+  print("Using 'for variable_name in list_name:' :")
+  for names in friends:
+    print(names)
+  print("\nusing 'for i in range(in,en,step)' :")
+  print(
+      "its similar to 'for(i=in;i<en;i+=step)' in C++ , by default in=0 and step=1 :"
+  )
+  for i in range(len(friends)):
+    print(friends[i])
+
+
+def destructuring_in_python():
+  dict = {"hey": 9, "mia": 8, "he": 7, "wow": 5}
+  l1 = ["hey", "hello", "yolo"]
+  print(f"list/tuple/etc : {dict}")
+  print(
+      """\n Destructuring means getting values into multiple variables at once : \n variables can be assigned values through lists/tuples/dictionaries/ etc """
+  )
+  frst, scnd, thrd, frth = dict.values()
+  print(
+      f"\n Destructuring in a line \nfirst:{frst}  \nsecond:{scnd}  \nthird:{thrd}  \nfourth:{frth}"
+  )
+  print(f"\nDestructuring in for loop for a dictionary :")
+  for kys, valus in dict.items():
+    print(f"key = ={kys}  and value={valus}")
+
+
+def Misc_Notes_in_python():
+  print(
+      "\nbreak and continue keyword also work in loops of python as they do in c/c++ "
+  )
+  print(
+      "\nwe enter 'else' of  loop if the loop was NOT terminated due to 'break' keyword"
+  )
+  print("eg : ")
+  cars = ["ok", "ok", "ok"]
+  bikes = ["ok", "fault", "ok", "ok"]
+  for car in cars:
+    if car == "faulty":
+      print("Found a faulty car ,using break keyword")
+      break
+    print(f"This car is {car}")
+  else:
+    print("entered else of for loop for cars, ALL CARS OKAY\n")
+  i = 0
+  while i < len(bikes):
+    if bikes[i] == "fault":
+      print("faulty bike found ,using break keyword to send to repair it")
+      print("repairing bike .....")
+      break
+    print(f"This bike is {bikes[i]}")
+    i += 1
+  else:
+    print("All bikes are ok")
+
+  print(f"\n\ngetting 'n' random number in python from given list lst:\n")
+  print("first 'import random'")
+  lst = list(range(7))
+  print(f"list is {lst}")
+  n = 5
+  print(f"n is {n}")
+  print(f"random.sample(lst,n) = {random.sample(lst,n)}\n\n")
+  num=5.66667777454333
+  print(f"\n\nnum={num}\nprint the number stored in variable to fixed decimal places by rounding of=> var_name:.nf :\nnum:.5f={num:.5f}")
+
+
+def prime_in_python():
+  end = int(input("enter the ending range of list of prime numbers : "))
+  for i in range(2, end + 1):
+    for j in range(2, i):
+      if i % j == 0:
+        break
+    else:
+      print(f"{i} is prime")
+
+
+def slicing_in_python():
+  list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  print(f"\noriginal list : {list} \n")
+  print(
+      "Note : list[start:end:step] \n start is inclusive and end is exclusive \n -ve start/end: 1 indexed count from end to start or \n-ve start/end= +ve(len(list)-start/end) \n +ve start/end: 0 indexed count from start to end \n by default start=0 and end=len(list) and step=1 \n\n eg:"
+  )
+  print(
+      f"list[:]={list[:]} \n//this is actually new list unlike print(list) which prints list itself"
+  )
+  print(f"list[:4] = {list[:4]}")
+  print(f"list[3:] = {list[3:]}")
+  print(f"list[:-4] = {list[:-4]}")
+  print(f"list[-3:] = {list[-3:]}")
+  print(f"list[3:6] = {list[3:6]}")
+  print(f"list[-3:9] = {list[-3:9]}")
+  print(f"list[2:-5] = {list[2:-5]}")
+  print(f"list[-8:-2] = {list[-8:-2]}")
+
+
+def comprehension_list_in_python():
+  print(
+      "\n comprehension of list is somewhat creating a list using 'for loop' in its square brackets"
+  )
+  print("\n eg : ")
+  list1 = [i for i in range(0, 10, 2)]
+  print(f"list1 = [i for i in range(0,10,2)] ={list1}")
+  list2 = [num * 5 for num in list1]
+  print(f"list2 = [num*5 for num in list1] ={list2}")
+  list3 = [num + 5 for num in list2]
+  print(f"list3 = [num+5 for num in list2 ] ={list3}")
+  list4 = [num for num in list3 if num % 3 == 0]
+  print(f"list4 = [num for num in list3 if num%3==0] = {list4}")
+  friends = ["Anny", "Arry", "Perks", "Vicious"]
+  family = ["Mamy", "Drude", "Bary", "perks", "vicious"]
+  print(f"friends : {friends}")
+  print(f"family : {family}")
+  print(
+      "Notice there are common names in friends and family but upper/lower case changed"
+  )
+  family_low = set([name.lower() for name in family])
+  friends_low = set([name.lower() for name in friends])
+  print(
+      f"\n friends that are also family using set : {friends_low.intersection(family_low)}\n BUT NOTICE THAT NOW NAMES ARE IN LOWERCASE "
+  )
+  print(
+      f"\n friends that are also family using conditional comprehension : {[name.title() for name in friends if name.lower() in [n.lower() for n in family]]}"
+  )
+
+
+def comprehension_set_dict_in_python():
+  friends = ["Anny", "Arry", "Perks", "Vicious"]
+  family = ["Mamy", "Drude", "Bary", "perks", "vicious"]
+  print(f"\n\nfriends : {friends}")
+  print(f"family : {family}")
+  print("Notice there are common names in friends and family but upper/lower case changed")
+  common = {names.title()
+            for names in friends
+            }.intersection({names.title()
+                            for names in family})
+  print(
+      f"""\n friends that are also family using set : check line 134  {common}"""
+  )
+  met_before_days = [5, 7, 9, 3]
+  print(f"\n\nMet before days : {met_before_days}")
+  dct = {
+      friends[i]: met_before_days[i]
+      for i in range(len(friends)) if met_before_days[i] >= 5
+  }
+  print(f"dictionary of friends that met before 5 days : {dct}")
+
+  print(
+      f"\n\n This dictionary can also be obtained using zip function :\n dict(zip(friends,met_before_days)) : {dict(zip(friends,met_before_days))} \n1. this way there is no new list created and zip function zips the two lists together\n2. object returned by zip needs to be converted to list/tuple/set in order to print it . \n3. by list(zip(ar1,ar2)) we get [(ar1[0],ar2[0]),(ar1[1],ar2[1]),......]\n4. if we are converting to list than we can zip more that wo lists together and we finally get list of tuples any extra elament at the end of longer list will be ignored\n5.  by dict(zip(ar1,ar2)) we get {{ar1[0]:ar2[0], ar1[1]:ar2[1] ,......}}"
+  )
+  print(
+      f"\n NOTE : IN ORDER TO PRINT 1 CURLY BRACE -> {{}}  AS TEXT YOU NEED TO ENTER TWO CURLY BRACES {{{{}}}}  IN STRING FUNCTION THAT USES  print(f'txt{{}}')\n\n"
+  )
+
+  longdct = {names: days for names in friends for days in met_before_days}
+  print(
+      f"\n\nif trying to map every element of friends to every element of met_before_days {longdct} picked up last value of days i.e.  second list"
+  )
+  print(
+      "\n\nNotice that unlike square brackets for list we've used curly braces for sets and dictionaries"
+  )
+  li_en = list(enumerate(friends, start=1))
+  print(
+      f"\n\n enumerate function : \nEnumerate maps a number to every elements of list as its name suggests numerate \n list(enumarete(friends,start=1))={li_en}\n value for start is 0 initially"
+  )
+
+
+def normal_function():
+  print("\nI am a normal function defined as  'def normal_function(): and evry line of code in it has to be intended by atleast 4 spaces'") 
+
+def function_with_parameters(a,b):
+  print("\nI am a function with parameters a and b defined as 'def function_with_parameters(a,b):' and ill calculate sum and print")
+  print(f"sum of a and b is {a+b}")
+
+def function_with_parameters_having_default_value(a,b=5):
+  print(f"sum of a and b is {a+b}")
+
+
+def maximum(lst):
+  return max(lst)
+  
+def functions_in_python():
+  print("\n\nCalling a normal function (defined at line 211)")
+  normal_function()
+  print("\n\nCalling a  function with parameters (defined at line 214)")
+  function_with_parameters(4,5)
+  print("\n\nCalling a  function with parameters having default value (defined at line 218)")
+  print("\nI am a function with parameters a and b defined as 'def function_with_parameters_having_default_value(a,b=5):' and i'll calculate sum and print")
+  print("\n1. only passing one value that is 'a' as 4 :")
+  print("function_with_parameters_having_default_value(4)=>")
+  function_with_parameters_having_default_value(4)
+  print("\n2. passing both values ,the one with default value takes up passed value 'a'=4 and 'b'=8 :")
+  print("function_with_parameters_having_default_value(4,8)")
+  function_with_parameters_having_default_value(4,8)
+  print("\n3. passing the arguments with their name  =>") 
+  print("function_with_parameters_having_default_value(a=4,b=6)")
+  function_with_parameters_having_default_value(a=4,b=6)
+  print("\n4. passing first value with name  :") 
+  print("function_with_parameters_having_default_value(a=4,6) => \ngives error as initial arguments cannot be passed with name if later arguments are not passed with name :")
+  #function_with_parameters_having_default_value(a=4,b)   #commented as it shows error
+  print("\n5. passing later values with name  :")
+  print("function_with_parameters_having_default_value(4,b=6)")
+  function_with_parameters_having_default_value(4,b=6)
+  
+  print("\n\nLambda function in python: ")
+  print("\nLambda function is a small anonymous function without a name. It is defined using the lambda keyword.")
+  print("eg : Assume we have three arrays nameli X,Y,Z and their corresponding elements as x,y,z then to get the value by putting them in a function named 'simplify' defined as 2*x+3*y-2*z  we dont need to write this for all ,we can directly use lambda function as 'simplify=lambda x,y,z : 2*x+3*y-2*z' and then use 'simplify(x,y,z)' to get the value of 'simplify' for all elements ")
+  X=[2,6,8]
+  print(f"\nX:{X}")
+  Y=[3,8,6]
+  print(f"Y:{Y}")
+  Z=[5,8,2]
+  print(f"Z:{Z}\n")
+  print("\nformat of lambda function:\n   name=lambda list_of_parameters_separated_by_, : return value of function using parameters \nfor calling :\n   name(list_of_arguments_separated_by_,)\n")
+  simplify=lambda X,Y,Z : 2*x+3*y-2*z+2**x 
+  for x,y,z in list(zip(X,Y,Z)):
+    print(f"simplify(x,y,z) : {simplify(x,y,z)}")
+
+  print("\n\n First class function in python : \n")
+  print("A function is first class function if it can be passed as an argument  to another function or returned from another function.  or can be passed as a function to another name or variable please look at code from line 260 onwards \n ")
+  operations={1:sum, 2: lambda seq: sum(seq)/len(seq) , 3:maximum}
+  print(f"\noperations : {{1:sum, 2: lambda seq: sum(seq)/len(seq) , 3:maximum}} \n here sum is inbuilt sum(list) \n top is mapped to user defined function maximum(list) which is defined at line 222")
+  student_result=[
+    {"name": "Rolf", "grades":(76,98,56,90)},
+    {"name": "Lily", "grades":(76,89,45,87)},
+    {"name": "Lesty", "grades":(98,67,56,90)},
+    {"name": "Nery", "grades":(89,44,87,45)}
+  ]
+  for student in student_result:
+    print(f"\nName : {student['name']}")
+    print(f"Grades : {student['grades']}")
+    ch=int(input("Enter \n 1 to get total of grades\n 2 to get average of grades\n 3 to get maximum of grades \n " ))
+    grades=student['grades']
+    print(f"{ch} : {operations[ch](grades)}")
+    
+  class_total=[]
+  for student in student_result:
+    class_total.append({student["name"]:operations[2](student["grades"])})
+      
+  print(f"\n\nclass_total : {class_total}") 
+
+
+
+print("\n\n\n---------------Conditional statements---------")
+#conditionals_in_python()
+print("\n\n\n---------------While loops--------------------")
+#while_loops_in_python()
+
+print("\n\n\n---------------For Loops----------------------")
+#For_loops_in_python()
+
+print("\n\n\n---------------Misc Notes---------------------")
+Misc_Notes_in_python()
+
+print("\n\n\n---------------Finding prime numbers----------")
+#prime_in_python()
+
+print("\n\n\n---------------List Slicing in python---------")
+#slicing_in_python()
+
+print("\n\n\n---------------Comprehension List in python---")
+#comprehension_list_in_python()
+
+print("\n\n\n---------------Comprehension set/dict in python")
+print("first study comprehension list then this it ")
+print("contains zip() and enumerate as well")
+#comprehension_set_dict_in_python()
+
+print("\n\n\n---------------Destructuring in python -------")
+#destructuring_in_python()
+
+print("\n\n\n---------------Functions in python -----------")
+#functions_in_python()
