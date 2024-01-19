@@ -1,0 +1,148 @@
+""" learn the basics of python """
+
+
+def numbers_in_python():
+  float_div = 5 / 3
+  int_div = 5 // 3
+  remainder = 5 % 3
+  print(float_div)
+  print(int_div)
+  print(remainder)
+
+
+def variables_in_python():
+  age = 30
+  print(age)
+  age = 50
+  print(age)
+  # 1stnum=80 will show error
+  #snake case : use of underscore to distinguish words
+  _num = 80
+  num_1 = 80
+  print(num_1)
+
+
+def strings_in_python():
+  str1 = 'hello'
+  #str1='hello it's me'  #will give wrong output
+  str2 = "hello"
+  #str2=""hello",he said"  #will give wrong output
+  str3 = """hello"""
+  """for multiline comment or string """
+  str4 = '''hello'''
+  '''for multiline comment or string '''
+  print(str1 + "\n" + str2 + "\n" + str3 + "\n" + str4)
+  num = 20
+  # str11="hello my age is "+ num  #will show error
+  print("hello my age is " + str(num))  # won't show error
+
+
+def string_formatting():
+  age = 21
+  age_as_str = str(age)
+  print(
+      " converting string str to lowercase : str.lower() \n converting string str to uppercase : str.upper() \n converting string str to title case : str.title()"
+  )
+  print("I am " + age_as_str + " years old    by addition of strings ")
+  #or
+  print(f"I am {age_as_str} years old    by f string"
+        )  #i.e. put the variable partvin {}
+  #or
+  print("I am %d years old    by method similar to C" % age)
+  age = 20
+  greet = f"I am {age} years old"
+  print(greet + "    by fault in f string part 1")
+  age = 25
+  print(greet + "    by fault in f string part 2")
+  """this is the limitation of f string that it prints the latest value of 
+  age as the ones before it and ignores the updates made after it there we 
+  use .format()"""
+  greet = "I am {} years old"
+  print(
+      greet.format(age) +
+      """    by .format(value) part 1  //any variable can also be used as value"""
+  )
+  age = 50
+  print(greet.format(age) + "    by .format(value) part 2")
+  greet = "I am {age} years old"
+  print(
+      greet.format(age=20) +
+      """    by .format(name=value) part 1 //probably used for multiple values"""
+  )
+  print(greet.format(age=50) + "    by .format(name=value) part 2")
+
+
+def getting_user_input():
+  name1 = input("Enter your name : ")
+  msg = "Hello {} ! My name is Anshika. "
+  print(msg.format(name1))
+  #user input is always a string by default , to get integer as input we use int()
+  age = int(input("Please enter your age :"))
+  print(
+      f"you have lived for {age} * 12 = {age*12} months . //when input taken as int"
+  )
+  age = input("Please enter your age :")
+  print(
+      f"you have lived for {age} * 12 = {age*12} months . //when input not converted to int"
+  )
+
+
+def boolean():
+  num = 18
+  print(f"\n num = {num} \n")
+  print(f"is number less than 20 : {num<20} ")
+  print(f"is num greater than 20 : {num>20}")
+
+
+def and_or():
+  num1 = 20
+  num2 = 30
+  print(f"\n num1 ={num1} \n num2 = {num2}")
+
+  print(f"\n Is num1 and num2 > 25 {num1>25 and num2>25}")
+  #_______________________________________________________________________________
+  print(f"\n Is num1 or num2 > 25 {num1>25 or num2>25}")
+  #_______________________________________________________________________________
+  print(
+      "\nNOTE : 0 OR EMPTY list/string/tuple/set/dict is false otherwise true eg:"
+  )
+  print(
+      f"""\n bool('')={bool('')} \n bool('a')={bool('a')} \n bool(0)={bool(0)} \n bool(67)={bool(67)} \n bool((0,0)={bool((0,0))} //even if values are 0 stil sincetuple is not empty it returns true """
+  )
+  print(
+      "\n in this example if you input name it'll print name else it'll print 'there'"
+  )
+  name = input('Enter your name (optional):')
+  ther = name or 'there'
+  #ther = name if its not empty else its same as next one
+  print(f"Hello {ther} !")
+  #for both trial
+  name = input('Enter your name (optional):')
+  ther = name or 'there'
+  print(f"Hello {ther} !")
+  #first conditions evaluate and the and/or evaluate left to right
+  print(
+      "\n Note : in case of or if first condition is true it returns first value and  wont check second value , otherwise returns second value \n\n\n in case of and ,if first condition is false it returns first value and  wont evalvate condition to its right ,otherwise returns second value"
+  )
+
+
+print("\n\n________________numbers in python__________________")
+#numbers_in_python()
+
+print("\n\n________________variables in python________________")
+#variables_in_python()
+
+print("\n\n________________Strings in python__________________")
+#strings_in_python()
+
+print("\n\n________________String formatting in python________")
+#string_formatting()
+
+print("\n\n________________Getting user input in python_______")
+#getting_user_input()
+
+print("\n\n________________Booleans and comparisons___________")
+#boolean()
+
+print("\n\n________________Working with and and or____________")
+#and_or()
