@@ -1,0 +1,111 @@
+def lists_in_python():
+  list1=["a","b",2] #but try to keep in homogenous
+  #or
+  lst=list(range(6)) 
+  print(f"\n List initialized with elements 0,1,2,3,4,5 by list(range(6)) is {lst}")
+  list_of_list=[["a",5],["c",4],["f",6,8]] #eg: stroing name with age
+  #liste1=list()
+  #liste2=[]
+  print(f"Empty list by list1=list() or [] \nlist1 : {list1}\n")
+  print(f"list of list : {list_of_list}\n")
+  print(f"length of list = len(list1) : {len(list1)}\n")
+  print(f"access ith element from front using list1[2] : {list1[2]}\n")
+  print(f"access ith element from back using list1[-1]: {list1[-1]}\n")
+  list1.insert(2,20)
+  print(f"insert value v at index i by list1.insert(i,v)=list1.insert(2,20) : {list1}\n")
+  list1.append([43,45])
+  print(f"\n\n Append  list using list1.append(list2) : {list1}\n")
+  list1.append(8)
+  print(f"Append  an element to list using list1.append(value) : {list1}\n")
+  list2=[2,6,7,5,7,3,5]
+  print(f"list2: {list2}\n")
+  print(f"""list2 + list 1 : {list2 + list1} \n but both must be lists \n""")
+  list2.extend(list1)
+  print(f"""list2 extend at the end by another collection(tuple/list etc) using list2.extend(tuple1) : {list2}\n""")
+  list5=["johny","meenal","sammy"]
+  print(f"List : {list5} ")
+  print(f"""Using join function str1.join(list1) : {', '.join(list5)}\nNote : list must contain strings \n     2.in return we will get a string in which all elements of list will have str1 between them and their presentation will change eg. no square brackets\n""")
+
+def tuples_in_python():
+  tup1="a","b",2  #but try to keep in homogenous
+  tup1_organized =("a","b",2) 
+  #tupe1=tuple()
+  #tupe2=()
+  print(f"Empty tuple=tuple() or ()\n Tuple1 : {tup1}\n")
+  print(f"tuple but with brackets  : {tup1_organized}\n Note: (1) is not a tuple but a string ('2') will be tuple ,in the former pyhon considers parenthesis for mathematical use ,to create a tuple with one numerical  element use (1,) instead of (1)\n ")
+  print(f"length of tup1 = len(tup1) : {len(tup1)}\n")
+  print(f"access ith element from front using tup1[2] : {tup1[2]}\n")
+  print(f"access ith element from back using tup1[-1]: {tup1[-1]}\n")
+  list2=[2,4,5]
+  print(f"list2: {list2}\n")
+  print(f"""tuple_organized + tuple 1 : {tup1_organized + tup1} \n but both must be lists \n""")
+  print(f"""you cannot add,extend,append in a tuple as its immutable but a tuple can be added to list using extend : {list2.extend(tup1)}\n but list cannot be added to tuple""")
+  print(f"\ntup1: {tup1}")
+  tup1=tup1+ (2,5,3)
+  print(f"""giving the same variable name (i.e. tup1) to another tuple(i.e. to tup1+(2,5,3)) is possible as another new tuple with same name will be created and older tuple wil be unaccesible then \neg: tup1=tup1+(2,5,3) => {tup1}\n Hence this way we can add to tuple\n""")
+  print("We cannot remove/delete/pop value from tuple as tuple is immutable \n")
+  
+  
+def sets_in_python():
+  set1={"a","b",2} #in {}, no duplicates and do not maintain order
+ # sete1=set()
+ # sete2={}
+  print("Empty set1 =set() or {} ")
+  print(f"\nset1 = {set1}")
+  set1.add('john')
+  print(f"adding 'john' tp set1 using set1.add('john') : {set1}")
+  set1.add('kiwi')
+  set1.add('john')
+  print(f"\n Like I said no duplicates and no order maintained so first i add 'kiwi' and then 'john' again and it will not be added as it is already present and also notice that order of elements changed : {set1}")
+  set1.remove(2)
+  print(f"\nWe can also remove elements by using set1.remove('2') : {set1}")
+  print("\nWhats the use of sets ?? Why would you use sets if you already have lists and tuples ? ")
+  print("The answer is just like you study sets in your mathematics ,these are similar, comparision b/w sets can be done using set operations easily as compared to tuples/lists")
+  A={'john','rolph','jimmy','goofy'}
+  B={'Miranda','rogan','jimmy','rolph','Lily'}
+  i=1
+  print("\n Set operations : \n A={'john','rolph','jimmy','goofy'} \n B={'Miranda','rogan','jimmy','rolph',''Lily'}: \n")
+  print(f"{i}. Elements of A that are not in B (i.e.A-B) using \n ans=A.difference(B) : {A.difference(B)}")
+  i+=1
+  print(f"\n{i}. Elements  that are only in one out of A and B and not in both (i.e. symmetric difference) using \n ans=A.symmetric_difference(B) : {A.symmetric_difference(B)}")
+  i+=1
+  print(f"\n{i}. Elements  that are in both  A and B  (i.e. A INTERSECTION B) using \n ans=A.intersection(B) : {A.intersection(B)}")
+  i+=1
+  print(f"\n{i}. Elements  that are in either  A or B  (i.e. A U B) using \n ans=A.union(B) : {A.union(B)}")
+  
+def dictionaries_in_python():
+  dict1={"a":1,"b":2,"c":3}
+  print(f"Dictionary :Dict1 = {dict1}\n")
+  print("Note: 1. Dictionary is a collection of key value pairs ")
+  print("2. Keys are unique and immutable and values are mutable ")
+  print("3. Keys are sorted in the order of insertion \n")
+  dict1['d']=4;
+  print(f"Adding values to dictionary : dict_name[key]=value  => dict1['d']=4 : {dict1}\n")
+  print(f"Accessing the values from dictionary dict1['a]: {dict1['a']}\n")
+  list_of_tuples=[("a",5),("b",6),("c",7)]
+  print(f"List of tuples : {list_of_tuples}\n")
+  print(f"turning list of tuples with each tuple having 2 elements into dictionary : dict(list_of_tuples) : {dict(list_of_tuples)}\n")
+  le=len(dict1)
+  print(f"length of dictionary = len(dict1) : {le}\n")
+
+def sum_in_python():
+  list1=[2,8,7,6]
+  print(f"List : {list1}\n")
+  print(f"Sum of list1 =sum(list1) : {sum(list1)}\n Note: list must have numbers only")
+  
+
+
+print("\n\n_________LISTS IN PYTHON_____________\n ")
+#lists_in_python()
+
+print("\n\n_________TUPLES IN PYTHON_____________\n ")
+#tuples_in_python()
+
+print("\n\n________SETS IN PYTHON________________\n ")
+#sets_in_python()
+
+print("\n\n________DICTIONARIES IN PYTHON________\n ")
+#dictionaries_in_python()
+
+print("\n\n________SUM IN PYTHON_________________\n ")
+#sum_in_python()
